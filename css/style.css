@@ -17,6 +17,13 @@ canvas {
   height: 100%;
   background-color: #1A252F; }
 
+@media screen and (max-width: 650px) {
+  canvas {
+    display: none; }
+
+  #particles-js {
+    position: none;
+    display: none; } }
 /* ---- particles.js ---- */
 body, html {
   width: 100%;
