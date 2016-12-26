@@ -44,6 +44,15 @@ canvas {
   height: 100%;
   background-color: $background;
 }
+@media screen and (max-width: 650px) {
+canvas {
+  display: none;
+}
+#particles-js {
+  position: none;
+  display: none;
+}
+}
 /* ---- particles.js ---- */
 
 body , html {
