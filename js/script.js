@@ -25,7 +25,7 @@ $(function() {
 
     var arr = img_urls;
     arr = shuffle(arr);
-    console.log(arr);
+    //console.log(arr);
 
     for (i = 0; i < img_urls.length; i++) {
         $(".items").append(
