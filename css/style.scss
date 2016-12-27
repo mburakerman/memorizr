@@ -270,6 +270,9 @@ pointer-events:none;
 @include prefix(transform,rotateY(0deg),webkit moz ms o);
 z-index:2;
 }
+.no-pointer-events {
+pointer-events:none !important;
+}
 /* classes */
 
 /* -----
