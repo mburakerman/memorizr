@@ -104,7 +104,7 @@ $(function() {
 
                     total_clicks = total_clicks - 1;
 
-                    $('.clicked').addClass('animated tada matched');
+                    $('.clicked').addClass('animated tada matched no-pointer-events');
 
                     //Check if game over
                     check_if_game_over();
