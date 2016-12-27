@@ -256,6 +256,8 @@ section {
     -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
     z-index: 2; }
+  section .no-pointer-events {
+    pointer-events: none !important; }
   section .svg-icon {
     width: 1.2em;
     height: 1.2em;
