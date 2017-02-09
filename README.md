@@ -1,6 +1,6 @@
 # Memorizr
 
-Animal Pairs Game
+> Animal Pairs Game
 
 ### License
 
