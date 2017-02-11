@@ -40,15 +40,15 @@ $(function() {
     var count = 0;
 
     function check_level() {
-        if (total_clicks === 8) {
+        if (total_clicks === 10) {
 
             $(".first-svg").removeClass("level");
 
-        } else if (total_clicks === 14) {
+        } else if (total_clicks === 15) {
 
             $(".second-svg").removeClass("level");
 
-        } else if (total_clicks === 22) {
+        } else if (total_clicks === 20) {
 
             $(".third-svg").removeClass("level");
 
