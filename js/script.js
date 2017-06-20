@@ -25,7 +25,6 @@ $(function() {
 
     var arr = img_urls;
     arr = shuffle(arr);
-    //console.log(arr);
 
     for (i = 0; i < img_urls.length; i++) {
         $(".items").append(
@@ -55,11 +54,11 @@ $(function() {
         }
     }
 
-    function check_if_game_over() {
+    function game_over() {
         if ($(".matched").length === 48) {
 
             setTimeout(function() {
-                alert("Game over");
+                alert("Congrats. You have finished the game!");
             }, 1200);
 
             setTimeout(function() {
@@ -69,17 +68,28 @@ $(function() {
         }
     }
 
+
+    // for mozilla issue, make opacity 0 as default
+    $('.image').addClass('noOpacity');
+
     $(".front").click(function(e) {
+
+        // for mozilla issue, play opacity of .image
+        var self = this;
+        setTimeout(function() {
+            $(self).next('.back').find('.image').addClass('yesOpacity');
+        }, 300);
 
         count++;
 
-        //prevent fast click
+        // prevent fast click
         if ($(e.target).data('oneclicked') != 'yes') {
             $(e.target).css("pointer-events", "none")
             setTimeout(function() {
                 $(e.target).css("pointer-events", "auto")
             }, 400);
         }
+
 
         if (count === 1) {
 
@@ -106,8 +116,8 @@ $(function() {
 
                     $('.clicked').addClass('animated tada matched no-pointer-events');
 
-                    //Check if game over
-                    check_if_game_over();
+                    //Check if game is over
+                    game_over();
 
                 } else {
 
@@ -118,27 +128,33 @@ $(function() {
 
                     setTimeout(function() {
                         $(".clicked").removeClass("clicked shake");
+
+                        // for mozilla issue, play opacity of .image
+                        $('.image').not('section .matched').removeClass('yesOpacity');
+                        $('.image').not('section .matched').addClass('noOpacity');
+
                     }, 500);
 
                 }
 
                 $(".front").css("pointer-events", "auto");
 
-
                 total_clicks++;
                 $(".total_clicks span").text(total_clicks);
                 check_level();
 
-            }, 600);
+            }, 525);
 
         }
 
         return false;
-    });  
-    
- // Browser check
- if (navigator.userAgent.indexOf("Firefox") > 0) {
-     alert("Please open this page on Google Chrome to play!");
- }
-    
+    });
+
+
+    // hide particles in mozilla
+    if (navigator.userAgent.indexOf("Firefox") > 0) {
+        document.getElementById('particles-js').style.display = "none";
+    }
+
+
 });
